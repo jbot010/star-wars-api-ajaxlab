@@ -8,7 +8,7 @@ const StarshipList = () => {
   useEffect(() => {
     const fetchStarshipList = async () => {
       const startshipData = await getStarshipList()
-      console.log(startshipData.results)
+      console.log('list', startshipData.results)
       setStarshipList(startshipData.results)
     }
     fetchStarshipList()
@@ -20,10 +20,9 @@ const StarshipList = () => {
     const id = url.split("https://swapi.dev/api/starships/")[1].replace("/", "")
     return id
   }
-  
+
   return (
     <main className="starship-list">
-      <h1>Starship List!</h1>
       {starshipList.map((starship) => (
         <button key={starship.name} className="starship-container">
           <Link to={`starships/${getId(starship.url)}`}>{starship.name}</Link>
