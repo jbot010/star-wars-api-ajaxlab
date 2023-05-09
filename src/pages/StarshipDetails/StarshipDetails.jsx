@@ -22,9 +22,13 @@ const StarshipDetails = () => {
   console.log(id)
   return (
     <>
+    <div className="details-container">
       <h2>Name: {starshipDetails.name}</h2>
       <h2>Model: {starshipDetails.model}</h2>
-      <button><Link to={`/`}>Return</Link></button>
+      <div className="return-link">
+        <Link to={`/`}>Return</Link>
+      </div>
+    </div>
     </>
   )
 }

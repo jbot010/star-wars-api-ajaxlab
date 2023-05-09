@@ -22,12 +22,14 @@ const StarshipList = () => {
   }
 
   return (
-    <main className="starship-list">
+    <main>
+      <div className="starship-list">
       {starshipList.map((starship) => (
         <button key={starship.name} className="starship-container">
           <Link to={`starships/${getId(starship.url)}`}>{starship.name}</Link>
         </button>
       ))}
+      </div>
     </main>
   )
 }
